@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+# Node
+node_modules/
+# C/C++ build
+build/
+*.o
+*.a
+*.so
+# models / large media
+*.npy
+*.npz
+*.pt
+*.pth
+*.gguf
+*.onnx
+*.mp4
+# secrets
+*.key
+*.pem
+certificates/
+.env
+# OS
+.DS_Store

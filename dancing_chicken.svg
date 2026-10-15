@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="512" height="512" viewBox="0 0 240 240">
+  <title>Dancing Chicken</title>
+  <desc>A disco-chicken logo that bobs, flaps its wings, wiggles its tail, and shakes</desc>
+
+  <defs>
+    <radialGradient id="bodyGrad" cx="45%" cy="35%" r="75%">
+      <stop offset="0%"   stop-color="#FFFDF2"/>
+      <stop offset="70%"  stop-color="#F7EBD3"/>
+      <stop offset="100%" stop-color="#EAD8B8"/>
+    </radialGradient>
+    <radialGradient id="wingGrad" cx="40%" cy="30%" r="80%">
+      <stop offset="0%"   stop-color="#FFFDF2"/>
+      <stop offset="100%" stop-color="#E2CEA8"/>
+    </radialGradient>
+    <radialGradient id="tailGrad" cx="50%" cy="40%" r="80%">
+      <stop offset="0%"   stop-color="#FBF0D8"/>
+      <stop offset="100%" stop-color="#D9C08F"/>
+    </radialGradient>
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ground shadow -->
+  <ellipse cx="132" cy="222" rx="78" ry="10" fill="url(#shadowGrad)"/>
+
+  <!-- music note 1 (floating on the left) -->
+  <g>
+    <g fill="#6E7FB2">
+      <ellipse cx="34" cy="124" rx="9" ry="7"/>
+      <path d="M43 124 L43 74 L62 80 L62 120 L55 120 L55 78 L43 73"/>
+    </g>
+    <animateTransform attributeName="transform" type="translate"
+                      values="0 0; -8 -30; 0 0" dur="2.2s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- music note 2 (floating on the right) -->
+  <g>
+    <g fill="#8FA8DC">
+      <ellipse cx="204" cy="96" rx="9" ry="7"/>
+      <ellipse cx="222" cy="100" rx="9" ry="7"/>
+      <path d="M213 96 L213 40 L231 46 L231 94 Z"/>
+      <path d="M204 50 L204 96 L222 96 L222 50 Z"/>
+    </g>
+    <animateTransform attributeName="transform" type="translate"
+                      values="0 0; 6 24; 0 0" dur="1.7s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- THE CHICKEN -->
+  <g id="chicken">
+
+    <!-- tail feathers (behind body) -->
+    <g id="tail">
+      <g>
+        <path d="M186 118 L224 96 L216 122 Z" fill="url(#tailGrad)" stroke="#CDB377" stroke-width="1"/>
+        <path d="M190 122 L230 106 L222 132 Z" fill="url(#tailGrad)" stroke="#CDB377" stroke-width="1"/>
+        <path d="M190 128 L234 124 L222 148 Z" fill="url(#tailGrad)" stroke="#CDB377" stroke-width="1"/>
+      </g>
+      <animateTransform attributeName="transform" type="rotate"
+                        values="-8 200 135; 10 200 135; -8 200 135"
+                        dur="0.55s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- legs (behind body) -->
+    <g id="hipL">
+      <g>
+        <path d="M118 196 L114 214 L104 218 L100 222 L122 222 L119 216 L118 210 Z"
+              fill="#E8942A" stroke="#C67A15" stroke-width="1"/>
+      </g>
+      <animateTransform attributeName="transform" type="rotate"
+                        values="10 118 196; -12 118 196; 10 118 196"
+                        dur="0.44s" repeatCount="indefinite"/>
+    </g>
+    <g id="hipR">
+      <g>
+        <path d="M146 196 L142 214 L132 218 L128 222 L150 222 L147 216 L146 210 Z"
+              fill="#E8942A" stroke="#C67A15" stroke-width="1"/>
+      </g>
+      <animateTransform attributeName="transform" type="rotate"
+                        values="-12 146 196; 10 146 196; -12 146 196"
+                        dur="0.44s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- body -->
+    <g id="body">
+      <g>
+        <ellipse cx="150" cy="152" rx="58" ry="46" fill="url(#bodyGrad)"
+                 stroke="#C9B488" stroke-width="1.5"/>
+      </g>
+      <animateTransform attributeName="transform" type="rotate"
+                        values="0 150 152; -5 150 152; 5 150 152; 0 150 152"
+                        dur="0.55s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- wing (flaps on the dance floor) -->
+    <g id="wing">
+      <g>
+        <ellipse cx="142" cy="150" rx="34" ry="27" fill="url(#wingGrad)"
+                 stroke="#CDB377" stroke-width="1.5"
+                 transform="rotate(-18 142 150)"/>
+        <path d="M132 142 L140 132 L149 140 L156 132 L163 141 L160 154 L134 156 Z"
+              fill="#D7C08C" stroke="#B9975A" stroke-width="1"/>
+      </g>
+      <animateTransform attributeName="transform" type="rotate"
+                        values="0 128 142; -40 128 142; 0 128 142"
+                        dur="0.30s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- neck -->
+    <path d="M96 118 C96 104 104 96 114 94 L118 108 C112 112 108 118 106 128 Z"
+          fill="url(#bodyGrad)" stroke="#C9B488" stroke-width="1.5"/>
+
+    <!-- head -->
+    <g id="head">
+      <g>
+        <ellipse cx="92" cy="88" rx="30" ry="28" fill="url(#bodyGrad)"
+                 stroke="#C9B488" stroke-width="1.5"/>
+        <!-- wattle -->
+        <path d="M66 108 C58 112 54 122 64 127 C70 120 66 112 66 108 Z"
+              fill="#D64541" stroke="#B0302C" stroke-width="1"/>
+        <!-- comb -->
+        <path d="M72 62 C70 54 74 48 80 50 C82 42 92 42 94 50 C98 44 106 48 106 56 C112 54 116 62 108 68 L76 68 Z"
+              fill="#D64541" stroke="#B0302C" stroke-width="1"/>
+        <!-- beak -->
+        <path d="M64 92 L40 88 L64 84 Z" fill="#E8942A" stroke="#C67A15" stroke-width="1"/>
+        <!-- eye -->
+        <circle cx="82" cy="84" r="6" fill="#2B2B2B"/>
+        <circle cx="80" cy="82" r="2" fill="#FFFFFF"/>
+      </g>
+      <animateTransform attributeName="transform" type="rotate"
+                        values="-4 92 88; 4 92 88; -4 92 88"
+                        dur="0.44s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- whole chicken bobs -->
+    <animateTransform attributeName="transform" type="translate"
+                      values="0 0; 0 -9; 0 0" dur="0.30s" repeatCount="indefinite"/>
+  </g>
+</svg>

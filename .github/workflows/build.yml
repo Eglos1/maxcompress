@@ -1,6 +1,6 @@
 name: build
 on:
-  push: {branches: [main], tags: ['v*']}
+  push: {branches: [main, master], tags: ['v*']}
   pull_request:
   workflow_dispatch:
 jobs:
